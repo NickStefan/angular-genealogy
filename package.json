@@ -1,0 +1,22 @@
+{
+  "name": "angular-genealogy",
+  "version": "0.0.0",
+  "description": "angular-genealogy =================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NickStefan/angular-genealogy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickStefan/angular-genealogy/issues"
+  },
+  "homepage": "https://github.com/NickStefan/angular-genealogy",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
