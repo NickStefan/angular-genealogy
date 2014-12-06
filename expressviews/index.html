@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Genealogy</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-app="app">
+  
+  <nav role="navigation" class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="index">Angular Genealogy</a>
+    </div>
+
+    <!-- Collection of nav links and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="index">My Stories</a></li>
+        <li><a ui-sref="route1">Route 1</a></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Login</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <div class="row container">
+    <div class="col-sm-6">
+      <div ui-view="storiesView"></div>        
+    </div>
+    <div class="col-sm-6">
+      <div ui-view="documentsView"></div>        
+    </div>
+  </div>
+
+  <!-- Angular -->
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
+  
+  <!-- other deps -->
+  <script src="lib/lodash.js"></script>
+
+  <!-- app -->
+  <script src="app/app.js"></script>
+</body>
+</html>

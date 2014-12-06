@@ -2,7 +2,7 @@
   "name": "angular-genealogy",
   "version": "0.0.0",
   "description": "angular-genealogy =================",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/NickStefan/angular-genealogy",
   "dependencies": {
-    "express": "^4.10.4"
+    "body-parser": "^1.10.0",
+    "consolidate": "^0.10.0",
+    "cookie-parser": "^1.3.3",
+    "express": "^4.10.4",
+    "lodash": "^2.4.1",
+    "nodemon": "^1.2.1",
+    "static-favicon": "^2.0.0-alpha",
+    "swig": "^1.4.2"
   }
 }
