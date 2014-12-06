@@ -1,1 +1,7 @@
-<div></div>
+<div ng-controller="storiesController">
+  <div ng-repeat="story in stories">
+    <span ng-repeat="link in story" ng-click="linkedDoc($parent.$index,$index)">
+      {{link.text}}
+    </span>
+  </div>
+</div>

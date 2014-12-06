@@ -2,6 +2,7 @@
   'use strict';
   angular
     .module('app',[
+      'stories',
       'ui.router'
     ])
     .config(function($stateProvider){
