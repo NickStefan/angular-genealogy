@@ -2,47 +2,41 @@ angular
   .module('stories',[])
   .controller('storiesController',storiesController);
 
-storiesController.$inject = ['$scope'];
+storiesController.$inject = ['$scope','storiesFactory'];
 
-function storiesController($scope){
-  $scope.stories = _.map(new Array(5),function(){
-    return {
-      viewing: false,
-      links: _.map(new Array(10),function(v,k,c){
-        return {
-          viewing: false,
-          text:_.map(new Array(10),function(){ 
-            return Math.random().toString(36).slice(2);
-          }).join(" ")
-        };
-      })
-    };
-  });
+function storiesController($scope,storiesFactory){
+  
+  $scope.stories = storiesFactory.stories;
+
+  $scope.linkedDoc = linkedDoc;
+  $scope.lastStoryI;
+  $scope.lastLinkI;
+
+  function linkedDoc(storyIndex,linkIndex){
+    if ($scope.lastLinkI !== undefined && $scope.lastLinkI !== linkIndex){
+      $scope.stories[$scope.lastStoryI].links[$scope.lastLinkI].viewingLink = false;
+    }
+    $scope.stories[storyIndex].links[linkIndex].viewingLink = true;
+    $scope.lastStoryI = storyIndex;
+    $scope.lastLinkI = linkIndex;
+  }
+}
 
   // actual future data structure:
   // [
   //   {
     //  viewing: false,
     //  links: [
-    //     {'text':'link1','viewing':false},
-    //     {'text':'link2','viewing':false},
+    //     {'text':'link1','viewingStory':false},
+    //     {'text':'link2','viewingStory':false},
     //   ]
     //  },
     // {
     //  viewing: false,
     //  links:
     //   [
-    //     {'text':'link1','viewing':false},
-    //     {'text':'link2','viewing':false},
+    //     {'text':'link1','viewingLink':false},
+    //     {'text':'link2','viewingLink':false},
     //   ]
     //  }
   // ]
-
-  $scope.linkedDoc = linkedDoc;
-}
-
-function linkedDoc(storyIndex,linkIndex){
-  console.log(storyIndex,"storyIndex");
-  console.log(linkIndex,"linkIndex");
-  $scope.stories[storyIndex][linkIndex].viewing = false;
-}

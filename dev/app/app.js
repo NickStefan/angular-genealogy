@@ -3,6 +3,7 @@
   angular
     .module('app',[
       'stories',
+      'documents',
       'ui.router'
     ])
     .config(function($stateProvider){
