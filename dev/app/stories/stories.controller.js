@@ -13,13 +13,17 @@ function storiesController($scope,storiesFactory){
   $scope.lastLinkI;
 
   function linkedDoc(storyIndex,linkIndex){
-    if ($scope.lastLinkI !== undefined && $scope.lastLinkI !== linkIndex){
+    if ($scope.lastLinkI > -1){
       $scope.stories[$scope.lastStoryI].links[$scope.lastLinkI].viewingLink = false;
     }
-    $scope.stories[storyIndex].links[linkIndex].viewingLink = true;
-    $scope.lastStoryI = storyIndex;
-    $scope.lastLinkI = linkIndex;
-    console.log($scope.stories[storyIndex].links[linkIndex]);
+    if ($scope.lastLinkI !== linkIndex){
+      $scope.stories[storyIndex].links[linkIndex].viewingLink = true;
+      $scope.lastStoryI = storyIndex;
+      $scope.lastLinkI = linkIndex;
+    } else {
+      $scope.lastStoryI = -1;
+      $scope.lastLinkI = -1;
+    }
   }
 }
 

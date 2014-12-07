@@ -5,3 +5,7 @@
 .story-link {
   
 }
+
+.active-story-link {
+  font-weight: bold;
+}

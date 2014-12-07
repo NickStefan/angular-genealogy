@@ -1,6 +1,6 @@
 <div ng-controller="storiesController">
   <div ng-repeat="story in stories" class="story">
-    <span ng-repeat="link in story.links" ng-click="linkedDoc($parent.$index,$index)" class="story-link">
+    <span ng-repeat="link in story.links" ng-click="linkedDoc($parent.$index,$index)" class="story-link" ng-class="{'active-story-link': $index == lastLinkI && $parent.$index == lastStoryI}">
       {{link.text}}
     </span>
   </div>
