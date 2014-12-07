@@ -19,6 +19,7 @@ function storiesController($scope,storiesFactory){
     $scope.stories[storyIndex].links[linkIndex].viewingLink = true;
     $scope.lastStoryI = storyIndex;
     $scope.lastLinkI = linkIndex;
+    console.log($scope.stories[storyIndex].links[linkIndex]);
   }
 }
 
